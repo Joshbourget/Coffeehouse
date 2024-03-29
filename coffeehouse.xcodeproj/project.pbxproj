@@ -15,6 +15,7 @@
 		48694A882BB4B03E00228807 /* PlaceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48694A872BB4B03E00228807 /* PlaceModel.swift */; };
 		48694A8A2BB4B0B000228807 /* PlacesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48694A892BB4B0B000228807 /* PlacesController.swift */; };
 		48694AAF2BB710BC00228807 /* PlacesAutocompleteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48694AAE2BB710BC00228807 /* PlacesAutocompleteView.swift */; };
+		48694AB12BB71CC200228807 /* ElectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48694AB02BB71CC200228807 /* ElectionModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		48694A872BB4B03E00228807 /* PlaceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceModel.swift; sourceTree = "<group>"; };
 		48694A892BB4B0B000228807 /* PlacesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesController.swift; sourceTree = "<group>"; };
 		48694AAE2BB710BC00228807 /* PlacesAutocompleteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesAutocompleteView.swift; sourceTree = "<group>"; };
+		48694AB02BB71CC200228807 /* ElectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElectionModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 			isa = PBXGroup;
 			children = (
 				48694A872BB4B03E00228807 /* PlaceModel.swift */,
+				48694AB02BB71CC200228807 /* ElectionModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -178,6 +181,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48694AB12BB71CC200228807 /* ElectionModel.swift in Sources */,
 				48611FED2BB16A32000762EB /* ContentView.swift in Sources */,
 				48611FEB2BB16A32000762EB /* coffeehouseApp.swift in Sources */,
 				48694A882BB4B03E00228807 /* PlaceModel.swift in Sources */,

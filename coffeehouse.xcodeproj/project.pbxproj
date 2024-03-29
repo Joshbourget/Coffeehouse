@@ -11,6 +11,10 @@
 		48611FED2BB16A32000762EB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48611FEC2BB16A32000762EB /* ContentView.swift */; };
 		48611FEF2BB16A34000762EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48611FEE2BB16A34000762EB /* Assets.xcassets */; };
 		48611FF22BB16A34000762EB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48611FF12BB16A34000762EB /* Preview Assets.xcassets */; };
+		48694A7B2BB351D500228807 /* GooglePlaces in Frameworks */ = {isa = PBXBuildFile; productRef = 48694A7A2BB351D500228807 /* GooglePlaces */; };
+		48694A882BB4B03E00228807 /* PlaceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48694A872BB4B03E00228807 /* PlaceModel.swift */; };
+		48694A8A2BB4B0B000228807 /* PlacesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48694A892BB4B0B000228807 /* PlacesController.swift */; };
+		48694AAF2BB710BC00228807 /* PlacesAutocompleteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48694AAE2BB710BC00228807 /* PlacesAutocompleteView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +23,9 @@
 		48611FEC2BB16A32000762EB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		48611FEE2BB16A34000762EB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		48611FF12BB16A34000762EB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		48694A872BB4B03E00228807 /* PlaceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceModel.swift; sourceTree = "<group>"; };
+		48694A892BB4B0B000228807 /* PlacesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesController.swift; sourceTree = "<group>"; };
+		48694AAE2BB710BC00228807 /* PlacesAutocompleteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesAutocompleteView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,6 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48694A7B2BB351D500228807 /* GooglePlaces in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -51,8 +59,10 @@
 		48611FE92BB16A32000762EB /* coffeehouse */ = {
 			isa = PBXGroup;
 			children = (
+				48694A7F2BB3536700228807 /* Controllers */,
+				48694A7E2BB352CE00228807 /* Views */,
+				48694A7D2BB3529900228807 /* Models */,
 				48611FEA2BB16A32000762EB /* coffeehouseApp.swift */,
-				48611FEC2BB16A32000762EB /* ContentView.swift */,
 				48611FEE2BB16A34000762EB /* Assets.xcassets */,
 				48611FF02BB16A34000762EB /* Preview Content */,
 			);
@@ -65,6 +75,31 @@
 				48611FF12BB16A34000762EB /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		48694A7D2BB3529900228807 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				48694A872BB4B03E00228807 /* PlaceModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		48694A7E2BB352CE00228807 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				48611FEC2BB16A32000762EB /* ContentView.swift */,
+				48694AAE2BB710BC00228807 /* PlacesAutocompleteView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		48694A7F2BB3536700228807 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				48694A892BB4B0B000228807 /* PlacesController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +118,9 @@
 			dependencies = (
 			);
 			name = coffeehouse;
+			packageProductDependencies = (
+				48694A7A2BB351D500228807 /* GooglePlaces */,
+			);
 			productName = coffeehouse;
 			productReference = 48611FE72BB16A32000762EB /* coffeehouse.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +149,9 @@
 				Base,
 			);
 			mainGroup = 48611FDE2BB16A32000762EB;
+			packageReferences = (
+				48694A792BB351D500228807 /* XCRemoteSwiftPackageReference "ios-places-sdk" */,
+			);
 			productRefGroup = 48611FE82BB16A32000762EB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -139,6 +180,9 @@
 			files = (
 				48611FED2BB16A32000762EB /* ContentView.swift in Sources */,
 				48611FEB2BB16A32000762EB /* coffeehouseApp.swift in Sources */,
+				48694A882BB4B03E00228807 /* PlaceModel.swift in Sources */,
+				48694A8A2BB4B0B000228807 /* PlacesController.swift in Sources */,
+				48694AAF2BB710BC00228807 /* PlacesAutocompleteView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,6 +388,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		48694A792BB351D500228807 /* XCRemoteSwiftPackageReference "ios-places-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/googlemaps/ios-places-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.3.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		48694A7A2BB351D500228807 /* GooglePlaces */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 48694A792BB351D500228807 /* XCRemoteSwiftPackageReference "ios-places-sdk" */;
+			productName = GooglePlaces;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 48611FDF2BB16A32000762EB /* Project object */;
 }

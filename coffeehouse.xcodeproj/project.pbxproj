@@ -7,18 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		48176CDF2BB74895000F998B /* BallotModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48176CDE2BB74895000F998B /* BallotModel.swift */; };
+		48176CE12BB749C6000F998B /* BallotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48176CE02BB749C6000F998B /* BallotView.swift */; };
+		48176CE32BB74A67000F998B /* CandidateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48176CE22BB74A67000F998B /* CandidateModel.swift */; };
+		48176CE42BB7568C000F998B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48611FEC2BB16A32000762EB /* ContentView.swift */; };
 		48611FEB2BB16A32000762EB /* coffeehouseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48611FEA2BB16A32000762EB /* coffeehouseApp.swift */; };
-		48611FED2BB16A32000762EB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48611FEC2BB16A32000762EB /* ContentView.swift */; };
 		48611FEF2BB16A34000762EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48611FEE2BB16A34000762EB /* Assets.xcassets */; };
 		48611FF22BB16A34000762EB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48611FF12BB16A34000762EB /* Preview Assets.xcassets */; };
 		48694A7B2BB351D500228807 /* GooglePlaces in Frameworks */ = {isa = PBXBuildFile; productRef = 48694A7A2BB351D500228807 /* GooglePlaces */; };
 		48694A882BB4B03E00228807 /* PlaceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48694A872BB4B03E00228807 /* PlaceModel.swift */; };
 		48694A8A2BB4B0B000228807 /* PlacesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48694A892BB4B0B000228807 /* PlacesController.swift */; };
 		48694AAF2BB710BC00228807 /* PlacesAutocompleteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48694AAE2BB710BC00228807 /* PlacesAutocompleteView.swift */; };
-		48694AB12BB71CC200228807 /* ElectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48694AB02BB71CC200228807 /* ElectionModel.swift */; };
+		48B7F8BB2BB84C170063303B /* CandidateProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B7F8BA2BB84C170063303B /* CandidateProfileView.swift */; };
+		48B7F8BD2BB84CBD0063303B /* CandidatesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B7F8BC2BB84CBD0063303B /* CandidatesView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		48176CDE2BB74895000F998B /* BallotModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BallotModel.swift; sourceTree = "<group>"; };
+		48176CE02BB749C6000F998B /* BallotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BallotView.swift; sourceTree = "<group>"; };
+		48176CE22BB74A67000F998B /* CandidateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CandidateModel.swift; sourceTree = "<group>"; };
 		48611FE72BB16A32000762EB /* coffeehouse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = coffeehouse.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48611FEA2BB16A32000762EB /* coffeehouseApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = coffeehouseApp.swift; sourceTree = "<group>"; };
 		48611FEC2BB16A32000762EB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -27,7 +34,8 @@
 		48694A872BB4B03E00228807 /* PlaceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceModel.swift; sourceTree = "<group>"; };
 		48694A892BB4B0B000228807 /* PlacesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesController.swift; sourceTree = "<group>"; };
 		48694AAE2BB710BC00228807 /* PlacesAutocompleteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesAutocompleteView.swift; sourceTree = "<group>"; };
-		48694AB02BB71CC200228807 /* ElectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElectionModel.swift; sourceTree = "<group>"; };
+		48B7F8BA2BB84C170063303B /* CandidateProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CandidateProfileView.swift; sourceTree = "<group>"; };
+		48B7F8BC2BB84CBD0063303B /* CandidatesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CandidatesView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,7 +91,8 @@
 			isa = PBXGroup;
 			children = (
 				48694A872BB4B03E00228807 /* PlaceModel.swift */,
-				48694AB02BB71CC200228807 /* ElectionModel.swift */,
+				48176CDE2BB74895000F998B /* BallotModel.swift */,
+				48176CE22BB74A67000F998B /* CandidateModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -93,6 +102,9 @@
 			children = (
 				48611FEC2BB16A32000762EB /* ContentView.swift */,
 				48694AAE2BB710BC00228807 /* PlacesAutocompleteView.swift */,
+				48176CE02BB749C6000F998B /* BallotView.swift */,
+				48B7F8BA2BB84C170063303B /* CandidateProfileView.swift */,
+				48B7F8BC2BB84CBD0063303B /* CandidatesView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -181,12 +193,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				48694AB12BB71CC200228807 /* ElectionModel.swift in Sources */,
-				48611FED2BB16A32000762EB /* ContentView.swift in Sources */,
 				48611FEB2BB16A32000762EB /* coffeehouseApp.swift in Sources */,
+				48B7F8BB2BB84C170063303B /* CandidateProfileView.swift in Sources */,
 				48694A882BB4B03E00228807 /* PlaceModel.swift in Sources */,
+				48176CE42BB7568C000F998B /* ContentView.swift in Sources */,
+				48B7F8BD2BB84CBD0063303B /* CandidatesView.swift in Sources */,
+				48176CDF2BB74895000F998B /* BallotModel.swift in Sources */,
 				48694A8A2BB4B0B000228807 /* PlacesController.swift in Sources */,
+				48176CE32BB74A67000F998B /* CandidateModel.swift in Sources */,
 				48694AAF2BB710BC00228807 /* PlacesAutocompleteView.swift in Sources */,
+				48176CE12BB749C6000F998B /* BallotView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -11,10 +11,12 @@ class PlacesController: ObservableObject {
     @Published var selectedPlace: PlaceModel?
     // Or if managing multiple places
     @Published var places: [PlaceModel] = []
+    @Published var selectedAddress: String = ""
     
     func selectPlace(name: String, placeID: String, address: String) {
         // Example of setting a selected place with address
         let newPlace = PlaceModel(name: name, placeID: placeID, address: address)
         self.selectedPlace = newPlace
+        self.selectedAddress = address
     }
 }

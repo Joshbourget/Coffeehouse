@@ -25,9 +25,21 @@ struct CandidateProfileView: View {
                     .foregroundColor(.white)
                     .padding(.top, 20)
                 
+                
                 if let url = URL(string: candidate.websiteURL), UIApplication.shared.canOpenURL(url) {
                     Link("Campaign Website", destination: url)
                         .padding(.top, 10)
+                }
+                
+                Button(action: {
+                    print("Added")
+                    }) {
+                    Text("Add to Voting List")
+                        .foregroundColor(.white)
+                        .bold()
+                        .padding()
+                        .background(Color(red: 171/255, green: 130/255, blue: 78/255))
+                        .cornerRadius(10)
                 }
                 Spacer()
             }

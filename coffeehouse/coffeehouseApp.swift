@@ -13,11 +13,13 @@ import GooglePlaces
 struct coffeehouseApp: App {
     init() {
         GMSPlacesClient.provideAPIKey("AIzaSyB2dvD2i9kDxLwFHMBDNrPBQUWL32OKDF8")
+        UITabBar.appearance().backgroundColor = UIColor(Color(red: 171/255, green: 130/255, blue: 78/255))
     }
     
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .accentColor(.white)
         }
     }
 }

@@ -2,51 +2,38 @@
 //  CandidateProfileView.swift
 //  coffeehouse
 //
-//  Created by Josh Bourget on 3/30/24.
+//  Created by Josh Bourget on 4/2/24.
 //
 
 import Foundation
 import SwiftUI
 
 struct CandidateProfileView: View {
-    var candidate: CandidateModel
+    @ObservedObject var placesController: PlacesController
+    var candidate: CandidateModel?
     
     var body: some View {
-        ZStack {
-            Color.black.edgesIgnoringSafeArea(.all)
-            VStack {
-                // Placeholder for candidate's profile picture
-                RoundedRectangle(cornerRadius: 10)
-                    .frame(width: 150, height: 150)
-                    .foregroundColor(.gray) // Use AsyncImage or similar to load from URL
-                
+        VStack {
+            if let candidate = placesController.selectedCandidate {
                 Text(candidate.name)
                     .font(.title)
-                    .foregroundColor(.white)
-                    .padding(.top, 20)
-                
-                
-                if let url = URL(string: candidate.websiteURL), UIApplication.shared.canOpenURL(url) {
-                    Link("Campaign Website", destination: url)
-                        .padding(.top, 10)
-                }
-                
+                    .foregroundColor(.black)
                 Button(action: {
-                    print("Added")
-                    }) {
+                    if let candidate = placesController.selectedCandidate {
+                        self.placesController.addToVotingList(candidate: candidate)
+                    }
+                }) {
                     Text("Add to Voting List")
                         .foregroundColor(.white)
-                        .bold()
                         .padding()
                         .background(Color(red: 171/255, green: 130/255, blue: 78/255))
                         .cornerRadius(10)
                 }
-                Spacer()
+            } else {
+                Text("Select a Candidate")
+                    .font(.title)
             }
-            .padding()
         }
-        .frame(maxWidth: .infinity) // Expands to fill the width
-        .navigationBarTitle("Candidate Profile", displayMode: .inline)
+        .padding()
     }
 }
-

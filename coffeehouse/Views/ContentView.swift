@@ -2,26 +2,29 @@
 //  ContentView.swift
 //  coffeehouse
 //
-//  Created by Josh Bourget on 3/25/24.
+//  Created by Josh Bourget on 4/1/24.
 //
 
+import Foundation
 import SwiftUI
 import Combine
 import GooglePlaces
 
 struct ContentView: View {
-    
+    @StateObject var placesController = PlacesController()
+
     var body: some View {
+        
         TabView {
-            InputAddressView()
+            InputAddressView(placesController: placesController)
                 .tabItem {
                     Image(systemName: "house.fill")
                 }
-            BallotView()
+            BallotView(placesController: placesController)
                 .tabItem {
                     Image(systemName: "person.2.circle.fill")
                 }
-            MyVotingListView()
+            MyVotingListView(placesController: placesController)
                 .tabItem {
                     Image(systemName: "list.bullet")
                 }
@@ -30,6 +33,7 @@ struct ContentView: View {
 }
 
 struct ContentView_Previews: PreviewProvider {
+
     static var previews: some View {
         ContentView()
     }

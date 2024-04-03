@@ -12,8 +12,8 @@ import GooglePlaces
 
 struct InputAddressView: View {
     @State private var showingPlacesAutocomplete = false // To control the presentation
-    @StateObject var placesController = PlacesController()
-    
+    @ObservedObject var placesController: PlacesController
+
     var body: some View {
         VStack {
             Spacer()
@@ -23,15 +23,15 @@ struct InputAddressView: View {
                 .foregroundColor(Color(red: 171/255, green: 130/255, blue: 78/255))
                 .fontWeight(.bold)
             Text("The Platform For Democracy")
-                .foregroundColor(.white)
+                .foregroundColor(.black)
                 .fontWeight(.bold)
-            Image("coffeehouse_back_logo")
+            Image("coffeehouse_white_logo")
                 .resizable()
                 .frame(width: 150, height: 150)
                 .padding()
             Button(action: {
                     showingPlacesAutocomplete = true
-                    }) {
+                }) {
                 Text("Input Address")
                     .foregroundColor(.white)
                     .bold()
@@ -40,14 +40,20 @@ struct InputAddressView: View {
                     .cornerRadius(10)
             }
             .padding()
+            .sheet(isPresented: $showingPlacesAutocomplete) {
+                PlacesAutocompleteView(placesController: placesController)
+            }
+            if !placesController.userAddress.isEmpty {
+                HStack {
+                    Spacer()
+                    Text("Selected Address: \(placesController.userAddress)")
+                        .foregroundColor(.black)
+                        .padding()
+                    Spacer()
+                }
+            }
             Spacer()
         }
-        .sheet(isPresented: $showingPlacesAutocomplete) {
-            PlacesAutocompleteView(placesController: placesController)
-        }
-        .frame(maxWidth: .infinity) // Expands to fill the width
-        .background(Color.black) // Example background color
-        .edgesIgnoringSafeArea(.all)
     }
 }
 

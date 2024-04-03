@@ -2,42 +2,66 @@
 //  PlacesController.swift
 //  coffeehouse
 //
-//  Created by Josh Bourget on 3/27/24.
+//  Created by Josh Bourget on 4/2/24.
 //
 
 import Foundation
+import Combine
 
 class PlacesController: ObservableObject {
-    @Published var coordinates: String = ""
     @Published var userAddress: String = ""
-    
+    @Published var electionDate: String = "No address selected"
+    @Published var locationAddress: String = "No address selected"
+    @Published var candidatesByOffice: [String: [CandidateModel]] = [:]
+    @Published var votingList: [CandidateModel] = []
+    @Published var selectedCandidate: CandidateModel? = nil
+
+    // Updates the user's address and fetches upcoming ballot information
     func updateAddress(_ address: String) {
-            self.userAddress = address
+        self.userAddress = address
+        fetchBallotInfo()
     }
     
-    func fetchCoordinates(for address: String) {
-        guard let url = URL(string: "http://localhost:8080/geocode") else { return }
+    func fetchBallotInfo() {
+        guard let url = URL(string: "http://localhost:3000/fetchBallots") else { return }
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        let body: [String: String] = ["address": address]
-        request.httpBody = try? JSONEncoder().encode(body)
+        let body: [String: Any] = ["address": userAddress]
+        request.httpBody = try? JSONSerialization.data(withJSONObject: body, options: [])
         
         URLSession.shared.dataTask(with: request) { [weak self] data, response, error in
             guard let data = data, error == nil else {
-                print("Error: \(error?.localizedDescription ?? "Unknown error")")
+                print("Error fetching ballot information: \(error?.localizedDescription ?? "Unknown error")")
                 return
             }
-            if let decodedResponse = try? JSONDecoder().decode(CoordinatesResponse.self, from: data) {
+            
+            do {
+                let response = try JSONDecoder().decode(BallotResponse.self, from: data)
                 DispatchQueue.main.async {
-                    self?.coordinates = "Latitude: \(decodedResponse.latitude), Longitude: \(decodedResponse.longitude)"
+                    self?.electionDate = response.electionDate
+                    self?.locationAddress = response.locationAddress
+                    self?.candidatesByOffice = response.candidatesByOffice
                 }
+            } catch {
+                print("Decoding error: \(error)")
             }
         }.resume()
     }
     
-    struct CoordinatesResponse: Decodable {
-        let latitude: Double
-        let longitude: Double
+    func addToVotingList(candidate: CandidateModel) {
+        votingList.append(candidate)
+    }
+    
+    func selectCandidate(candidate: CandidateModel) {
+        DispatchQueue.main.async {
+            self.selectedCandidate = candidate
+        }
+    }
+    
+    struct BallotResponse: Decodable {
+        let electionDate: String
+        let locationAddress: String
+        let candidatesByOffice: [String: [CandidateModel]]
     }
 }

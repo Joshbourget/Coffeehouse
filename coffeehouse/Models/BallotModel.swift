@@ -11,6 +11,5 @@ struct BallotModel: Decodable, Identifiable {
     var id: String
     var date: String
     var location: String
-    var candidates: [CandidateModel]
     var offices: String
 }

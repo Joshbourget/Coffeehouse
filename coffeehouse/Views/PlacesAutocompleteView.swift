@@ -30,7 +30,7 @@ struct PlacesAutocompleteView: UIViewControllerRepresentable {
             // Here we update the userAddress in placesController
             placesController.updateAddress(place.formattedAddress ?? "Unknown Address")
             parent.presentationMode.wrappedValue.dismiss()
-        }
+                    }
         
         func viewController(_ viewController: GMSAutocompleteViewController, didFailAutocompleteWithError error: Error) {
             // Handle the error.
@@ -50,7 +50,7 @@ struct PlacesAutocompleteView: UIViewControllerRepresentable {
         let autocompleteController = GMSAutocompleteViewController()
         autocompleteController.delegate = context.coordinator
 
-        let fields: GMSPlaceField = [.name, .placeID]
+        let fields: GMSPlaceField = [.name, .placeID, .formattedAddress]
         autocompleteController.placeFields = fields
 
         return autocompleteController

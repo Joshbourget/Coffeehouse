@@ -29,6 +29,17 @@ struct CandidateProfileView: View {
                         .background(Color(red: 171/255, green: 130/255, blue: 78/255))
                         .cornerRadius(10)
                 }
+                Button(action: {
+                    if let candidate = placesController.selectedCandidate {
+                        self.placesController.removeFromVotingList(candidate: candidate)
+                    }
+                }) {
+                    Text("Remove From Voting List")
+                        .foregroundColor(.white)
+                        .padding()
+                        .background(Color(red: 171/255, green: 130/255, blue: 78/255))
+                        .cornerRadius(10)
+                }
             } else {
                 Text("Select a Candidate")
                     .font(.title)

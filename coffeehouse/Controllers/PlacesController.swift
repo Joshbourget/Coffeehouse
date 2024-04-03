@@ -15,6 +15,9 @@ class PlacesController: ObservableObject {
     @Published var candidatesByOffice: [String: [CandidateModel]] = [:]
     @Published var votingList: [CandidateModel] = []
     @Published var selectedCandidate: CandidateModel? = nil
+    var candidatesGroupedByOffice: [String: [CandidateModel]] {
+        Dictionary(grouping: votingList, by: { $0.office })
+    }
 
     // Updates the user's address and fetches upcoming ballot information
     func updateAddress(_ address: String) {
@@ -23,7 +26,7 @@ class PlacesController: ObservableObject {
     }
     
     func fetchBallotInfo() {
-        guard let url = URL(string: "http://localhost:3000/fetchBallots") else { return }
+        guard let url = URL(string: "http://localhost:3000/fetchBallot") else { return }
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
@@ -51,6 +54,12 @@ class PlacesController: ObservableObject {
     
     func addToVotingList(candidate: CandidateModel) {
         votingList.append(candidate)
+    }
+    
+    func removeFromVotingList(candidate: CandidateModel) {
+        if let index = votingList.firstIndex(of: candidate) {
+            votingList.remove(at: index)
+        }
     }
     
     func selectCandidate(candidate: CandidateModel) {

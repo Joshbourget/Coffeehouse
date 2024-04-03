@@ -7,8 +7,9 @@
 
 import Foundation
 
-struct CandidateModel: Decodable, Identifiable {
+struct CandidateModel: Decodable, Identifiable, Equatable {
     let name: String
+    let office: String
     var id: String {
         return "\(name)"
     }

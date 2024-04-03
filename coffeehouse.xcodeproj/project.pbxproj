@@ -21,6 +21,7 @@
 		48694A882BB4B03E00228807 /* PlaceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48694A872BB4B03E00228807 /* PlaceModel.swift */; };
 		48694AAF2BB710BC00228807 /* PlacesAutocompleteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48694AAE2BB710BC00228807 /* PlacesAutocompleteView.swift */; };
 		4869C0CA2BBAD2BA00D9D41E /* InputAddressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4869C0C92BBAD2BA00D9D41E /* InputAddressView.swift */; };
+		488683AF2BBE0C290035C1D5 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488683AE2BBE0C290035C1D5 /* Config.swift */; };
 		48CE692E2BBBA4FC007D3325 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CE692D2BBBA4FC007D3325 /* ContentView.swift */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +40,7 @@
 		48694A872BB4B03E00228807 /* PlaceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceModel.swift; sourceTree = "<group>"; };
 		48694AAE2BB710BC00228807 /* PlacesAutocompleteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesAutocompleteView.swift; sourceTree = "<group>"; };
 		4869C0C92BBAD2BA00D9D41E /* InputAddressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputAddressView.swift; sourceTree = "<group>"; };
+		488683AE2BBE0C290035C1D5 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		48CE692D2BBBA4FC007D3325 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -94,6 +96,7 @@
 		48694A7D2BB3529900228807 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				488683AE2BBE0C290035C1D5 /* Config.swift */,
 				48694A872BB4B03E00228807 /* PlaceModel.swift */,
 				48176CDE2BB74895000F998B /* BallotModel.swift */,
 				484530792BBC995D002628DB /* CandidateModel.swift */,
@@ -205,6 +208,7 @@
 				48CE692E2BBBA4FC007D3325 /* ContentView.swift in Sources */,
 				48694A882BB4B03E00228807 /* PlaceModel.swift in Sources */,
 				4845307E2BBCB9CE002628DB /* MyVotingListView.swift in Sources */,
+				488683AF2BBE0C290035C1D5 /* Config.swift in Sources */,
 				484530762BBBEB74002628DB /* PlacesController.swift in Sources */,
 				48176CDF2BB74895000F998B /* BallotModel.swift in Sources */,
 				4869C0CA2BBAD2BA00D9D41E /* InputAddressView.swift in Sources */,

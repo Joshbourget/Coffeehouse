@@ -18,7 +18,6 @@ struct BallotView: View {
         NavigationView {
             VStack {
                 Spacer()
-                ScrollView(.horizontal, showsIndicators: false) {
                     HStack {
                         Spacer()
                         Button(action: {
@@ -45,7 +44,6 @@ struct BallotView: View {
                         .shadow(radius: 5)
                         Spacer()
                     }
-                }
                 Spacer()
                 NavigationLink(destination: CandidatesView(placesController: placesController), isActive: $navigateToCandidates) {
                     EmptyView()

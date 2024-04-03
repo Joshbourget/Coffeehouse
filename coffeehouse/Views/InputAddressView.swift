@@ -15,44 +15,48 @@ struct InputAddressView: View {
     @ObservedObject var placesController: PlacesController
 
     var body: some View {
-        VStack {
-            Spacer()
-            
-            Text("Coffeehouse")
-                .font(.largeTitle)
-                .foregroundColor(Color(red: 171/255, green: 130/255, blue: 78/255))
-                .fontWeight(.bold)
-            Text("The Platform For Democracy")
-                .foregroundColor(.black)
-                .fontWeight(.bold)
-            Image("coffeehouse_white_logo")
-                .resizable()
-                .frame(width: 150, height: 150)
-                .padding()
-            Button(action: {
-                    showingPlacesAutocomplete = true
-                }) {
-                Text("Input Address")
-                    .foregroundColor(.white)
-                    .bold()
+        NavigationView {
+            VStack {
+                Spacer()
+                
+                Text("Coffeehouse")
+                    .font(.largeTitle)
+                    .foregroundColor(Color(red: 171/255, green: 130/255, blue: 78/255))
+                    .fontWeight(.bold)
+                Text("The Platform For Democracy")
+                    .foregroundColor(.black)
+                    .fontWeight(.bold)
+                Image("coffeehouse_white_logo")
+                    .resizable()
+                    .frame(width: 150, height: 150)
                     .padding()
-                    .background(Color(red: 171/255, green: 130/255, blue: 78/255))
-                    .cornerRadius(10)
-            }
-            .padding()
-            .sheet(isPresented: $showingPlacesAutocomplete) {
-                PlacesAutocompleteView(placesController: placesController)
-            }
-            if !placesController.userAddress.isEmpty {
-                HStack {
-                    Spacer()
-                    Text("Selected Address: \(placesController.userAddress)")
-                        .foregroundColor(.black)
+                Button(action: {
+                        showingPlacesAutocomplete = true
+                    }) {
+                    Text("Input Address")
+                        .foregroundColor(.white)
+                        .bold()
                         .padding()
-                    Spacer()
+                        .background(Color(red: 171/255, green: 130/255, blue: 78/255))
+                        .cornerRadius(10)
                 }
+                .padding()
+                .sheet(isPresented: $showingPlacesAutocomplete) {
+                    PlacesAutocompleteView(placesController: placesController)
+                }
+                if !placesController.userAddress.isEmpty {
+                    HStack {
+                        Spacer()
+                        Text("Selected Address: \(placesController.userAddress)")
+                            .foregroundColor(.black)
+                            .padding()
+                            .frame(alignment: .center)
+                        Spacer()
+                    }
+                }
+                Spacer()
             }
-            Spacer()
+            .navigationBarTitle("Address", displayMode: .inline)
         }
     }
 }
